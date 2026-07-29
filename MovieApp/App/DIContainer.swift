@@ -1,4 +1,8 @@
 import Swinject
+import MovieAppCore
+import HomeFeature
+import DetailFeature
+import FavoriteFeature
 
 final class DIContainer {
     static let shared = DIContainer()

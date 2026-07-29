@@ -1,13 +1,7 @@
 import Foundation
 import CoreData
 import Combine
-
-protocol FavoriteLocalDataSourceProtocol {
-    func fetchFavorites() -> AnyPublisher<[MovieDTO], MovieError>
-    func isFavorite(id: Int) -> AnyPublisher<Bool, Never>
-    func addFavorite(_ movie: MovieDTO) -> AnyPublisher<Void, MovieError>
-    func removeFavorite(id: Int) -> AnyPublisher<Void, MovieError>
-}
+import MovieAppCore
 
 final class FavoriteLocalDataSource: FavoriteLocalDataSourceProtocol {
     private let stack: CoreDataStack

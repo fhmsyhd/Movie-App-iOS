@@ -10,6 +10,19 @@ packages:
     url: https://github.com/Swinject/Swinject.git
     from: 2.9.1
 
+  MovieAppCore:
+    path: Modules/MovieAppCore
+  CommonUI:
+    path: Modules/CommonUI
+  DetailFeature:
+    path: Modules/DetailFeature
+  HomeFeature:
+    path: Modules/HomeFeature
+  FavoriteFeature:
+    path: Modules/FavoriteFeature
+  AboutFeature:
+    path: Modules/AboutFeature
+
 targets:
   MovieApp:
     type: application
@@ -18,9 +31,16 @@ targets:
       - path: MovieApp
     resources:
       - path: MovieApp/Resources/Assets.xcassets
+      - path: MovieApp/Resources/Secrets.plist
       - path: MovieApp/Data/Persistence/MovieApp.xcdatamodeld
     dependencies:
       - package: Swinject
+      - package: MovieAppCore
+      - package: CommonUI
+      - package: DetailFeature
+      - package: HomeFeature
+      - package: FavoriteFeature
+      - package: AboutFeature
     info:
       path: MovieApp/Resources/Info.plist
       properties:
